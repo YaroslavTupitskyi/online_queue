@@ -1,0 +1,14 @@
+div.jumbotron.text-center
+  h1 = @doctor.name
+  p = @doctor.specialization
+  = link_to 'New record', new_hospital_doctor_record_path(@doctor.hospital_id, @doctor.id)
+- if @doctor.records.empty?
+  span.text-warning There are no records!
+- else
+  table.table.table-hover.table-bordered
+    thead
+      tr
+        th Name
+        th Phone
+        th Time
+    = render @doctor.records.sort_by {|e| e[:time_at]}

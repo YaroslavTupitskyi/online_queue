@@ -1,0 +1,6 @@
+- if record.time_at > Time.now
+  tbody
+    tr
+      td = record.name
+      td = record.phone
+      td.text-info = record.time_at.strftime("%m/%d/%Y %H:%M")

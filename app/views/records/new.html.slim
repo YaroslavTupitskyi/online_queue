@@ -1,0 +1,8 @@
+= bootstrap_form_for([@hospital, @doctor, @doctor.records.build]) do |f|
+  = f.text_field :name, placeholder: "Name"
+  = @record.errors.messages[:name].first if @record.errors.any? && @record.errors.messages[:name]
+  = f.text_field :phone, placeholder: "Phone"
+  = @record.errors.messages[:phone].first if @record.errors.any? && @record.errors.messages[:phone]
+  = f.datetime_select :time_at, :minute_step => 30, :start_year => 2016, :start_hour => 9, :end_hour => 16
+  = @record.errors.messages[:time_at].first if @record.errors.any? && @record.errors.messages[:time_at]
+  = f.submit "Create", class: 'btn-primary'

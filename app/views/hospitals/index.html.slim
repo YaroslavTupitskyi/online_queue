@@ -1,0 +1,15 @@
+.row-fluid
+  .span10.offset1
+    div.jumbotron.text-center
+      h1 Queue
+      p Welcome to Online Queue application! This application allows you register at real queue to doctors.
+
+- @searching_hospitals.each do |h|
+  .col-sm-3
+    .thumbnail
+      .caption
+        h3 = h.name
+        p = h.city
+        p = h.address
+        = link_to h do
+          span.glyphicon.glyphicon-folder-open

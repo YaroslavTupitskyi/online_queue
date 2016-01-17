@@ -1,0 +1,13 @@
+.div.jumbotron.text-center
+  h1 = @hospital.name
+  p = @hospital.city
+  p = @hospital.address
+- if @hospital.doctors.empty?
+  span.text-warning There are no doctors!
+- else
+  table.table.table-hover.table-bordered
+    thead
+      tr
+        th Name
+        th Specialization
+      = render @hospital.doctors.sort_by {|e| e[:specialization]}
