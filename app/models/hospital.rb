@@ -4,6 +4,7 @@ class Hospital < ActiveRecord::Base
   def self.search(search, id)
     if search
       where(['name LIKE ?', "%#{search}%"])
+      where(['city LIKE ?', "%#{search}%"])
     else
       Hospital.all
     end
